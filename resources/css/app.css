@@ -24,9 +24,9 @@
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Base
---------------------------------------- */
+------------------------------------------------- */
 
 * {
     box-sizing: border-box;
@@ -61,11 +61,11 @@ a {
 h1,
 h2,
 h3 {
+    margin-top: 0;
     color: var(--navy);
     font-family: var(--serif);
     font-weight: 500;
     line-height: 1.04;
-    margin-top: 0;
 }
 
 p {
@@ -76,24 +76,30 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 14px;
+
     margin-bottom: 14px;
+
     color: var(--navy);
-    font-size: 0.75rem;
+
+    font-size: .75rem;
     font-weight: 800;
-    letter-spacing: 0.18em;
+    letter-spacing: .18em;
     text-transform: uppercase;
 }
 
 .eyebrow::after {
     content: "";
+
     display: block;
+
     width: 38px;
     height: 2px;
+
     background: var(--gold);
 }
 
 .eyebrow.light {
-    color: rgba(255,255,255,.8);
+    color: rgba(255,255,255,.82);
 }
 
 .section {
@@ -101,72 +107,64 @@ p {
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Header
---------------------------------------- */
+------------------------------------------------- */
 
 .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
+
     background: rgba(255,255,255,.97);
+
     border-bottom: 1px solid rgba(0,0,0,.06);
+
     backdrop-filter: blur(12px);
 }
 
 .nav-wrap {
-    min-height: 82px;
+    min-height: 88px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 26px;
+
+    gap: 28px;
 }
 
 .brand {
+    flex: 0 0 auto;
+
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: var(--navy);
 }
 
-.brand-mark {
-    width: 60px;
-    color: var(--gold);
-}
-
-.brand-mark svg {
+.brand-logo {
     display: block;
-    width: 100%;
-}
 
-.brand-name {
-    color: var(--gold);
-    font-family: var(--serif);
-    font-size: 1.55rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    line-height: 1;
-}
+    width: auto;
+    height: 68px;
 
-.brand-subtitle {
-    margin-top: 3px;
-    color: var(--navy);
-    font-size: .65rem;
-    font-weight: 800;
-    letter-spacing: .26em;
+    object-fit: contain;
 }
 
 .desktop-nav {
+    margin-left: auto;
+
     display: flex;
     align-items: center;
+
     gap: 28px;
-    margin-left: auto;
 }
 
 .desktop-nav a {
     color: #263742;
+
     font-size: .92rem;
     font-weight: 650;
+
+    transition: color .15s ease;
 }
 
 .desktop-nav a:hover {
@@ -175,39 +173,51 @@ p {
 
 .phone-button {
     display: inline-flex;
-    gap: 9px;
     align-items: center;
+
+    gap: 9px;
+
     padding: 14px 20px;
+
     color: white;
     background: var(--navy);
+
     border-radius: 5px;
+
     font-weight: 800;
+
+    transition:
+        background .18s ease,
+        transform .18s ease;
 }
 
 .phone-button:hover {
     background: var(--navy-soft);
+    transform: translateY(-1px);
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Hero
---------------------------------------- */
+------------------------------------------------- */
 
 .hero {
     position: relative;
+
     min-height: 610px;
+
     display: flex;
     align-items: center;
 
     background:
         linear-gradient(
             90deg,
-            rgba(245,240,229,.98) 0%,
-            rgba(245,240,229,.91) 35%,
-            rgba(245,240,229,.38) 59%,
-            rgba(0,0,0,.03) 100%
+            rgba(245,240,229,.99) 0%,
+            rgba(245,240,229,.93) 34%,
+            rgba(245,240,229,.48) 58%,
+            rgba(0,0,0,.04) 100%
         ),
-        url("/images/dom-nc.webp") center / cover no-repeat;
+        url("/images/dominion-hero.jpg") center / cover no-repeat;
 
     overflow: hidden;
 }
@@ -218,39 +228,48 @@ p {
 }
 
 .hero-copy {
-    max-width: 615px;
-    padding: 70px 0;
+    max-width: 625px;
+
+    padding: 72px 0 78px;
 }
 
 .hero h1 {
-    margin-bottom: 22px;
-    font-size: clamp(3.1rem, 6vw, 5.4rem);
-    letter-spacing: -.035em;
+    margin-bottom: 23px;
+
+    font-size: clamp(3.15rem, 6vw, 5.45rem);
+    letter-spacing: -.038em;
 }
 
 .hero p {
-    max-width: 580px;
-    margin: 0 0 30px;
+    max-width: 585px;
+
+    margin: 0 0 31px;
+
     color: #2e383e;
+
     font-size: 1.13rem;
+    line-height: 1.68;
 }
 
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
+
     gap: 14px;
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Buttons
---------------------------------------- */
+------------------------------------------------- */
 
 .button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     min-height: 52px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 0 22px;
 
     border: 1px solid transparent;
@@ -258,7 +277,11 @@ p {
 
     font-size: .95rem;
     font-weight: 800;
-    transition: .18s ease;
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        transform .18s ease;
 }
 
 .button-primary {
@@ -274,7 +297,8 @@ p {
 .button-secondary,
 .button-outline {
     color: var(--navy);
-    background: rgba(255,255,255,.86);
+    background: rgba(255,255,255,.88);
+
     border-color: #91a0a7;
 }
 
@@ -287,6 +311,7 @@ p {
 .button-gold {
     color: #102a3c;
     background: var(--gold-light);
+
     border-color: var(--gold);
 }
 
@@ -295,34 +320,41 @@ p {
 }
 
 
-/* ---------------------------------------
-   Trust strip
---------------------------------------- */
+/* -------------------------------------------------
+   Trust Strip
+------------------------------------------------- */
 
 .trust-strip {
     position: relative;
     z-index: 5;
+
     margin-top: -22px;
 }
 
 .trust-grid {
-    max-width: 780px;
+    max-width: 820px;
+
     margin-left: max(20px, calc((100vw - var(--container)) / 2));
+
     padding: 18px 22px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
 
-    background: rgba(255,255,255,.95);
+    gap: 22px;
+
+    background: rgba(255,255,255,.97);
+
     border-radius: 5px;
+
     box-shadow: 0 10px 28px rgba(0,0,0,.08);
 }
 
 .trust-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+
+    gap: 11px;
 }
 
 .trust-item strong,
@@ -332,16 +364,21 @@ p {
 
 .trust-item strong {
     color: var(--navy);
+
     font-size: .82rem;
 }
 
 .trust-item span {
     margin-top: 2px;
+
     color: var(--gray);
+
     font-size: .72rem;
 }
 
 .trust-icon {
+    flex: 0 0 auto;
+
     width: 36px;
     height: 36px;
 
@@ -349,88 +386,104 @@ p {
     place-items: center;
 
     color: var(--navy);
+
     border: 1px solid #b7c1c6;
     border-radius: 50%;
+
     font-weight: 900;
 }
 
 
-/* ---------------------------------------
-   Service cards
---------------------------------------- */
+/* -------------------------------------------------
+   Service Cards
+------------------------------------------------- */
 
 .services-section {
-    padding-top: 56px;
-    background: #fff;
+    padding-top: 58px;
+
+    background: white;
 }
 
 .service-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 22px;
 }
 
 .service-card {
     overflow: hidden;
+
     background: white;
+
     border: 1px solid #e6e3dc;
     border-radius: 7px;
+
     box-shadow: 0 8px 26px rgba(14,40,55,.05);
 }
 
 .service-image {
-    height: 210px;
+    height: 215px;
+
     background-position: center;
     background-size: cover;
 }
 
 .metal-image {
-    background-image:
+    background:
         linear-gradient(135deg, #253947, #668093);
 }
 
 .roofing-image {
-    background-image:
+    background:
         linear-gradient(135deg, #666c6f, #b6aaa0);
 }
 
 .home-image {
-    background-image:
+    background:
         linear-gradient(135deg, #d9c5a3, #6b7d78);
 }
 
 .service-content {
-    padding: 25px;
+    padding: 26px;
 }
 
 .service-card h2 {
-    margin-bottom: 10px;
-    font-size: 1.7rem;
+    margin-bottom: 11px;
+
+    font-size: 1.72rem;
 }
 
 .service-card p {
-    min-height: 80px;
+    min-height: 82px;
+
     margin-bottom: 20px;
 }
 
 .service-card a,
 .topic-card a {
     color: var(--navy);
+
     font-weight: 800;
 }
 
 
-/* ---------------------------------------
-   Metal feature
---------------------------------------- */
+/* -------------------------------------------------
+   Metal Roofing Feature
+------------------------------------------------- */
 
 .metal-feature {
     background:
-        linear-gradient(90deg, #f8f5ef, #eee9df);
+        linear-gradient(
+            90deg,
+            #f8f5ef,
+            #eee9df
+        );
 }
 
 .section-heading {
     max-width: 700px;
+
     margin-bottom: 38px;
 }
 
@@ -439,53 +492,66 @@ p {
 .process-section h2,
 .locations-section h2 {
     margin-bottom: 18px;
+
     font-size: clamp(2.3rem, 4vw, 3.5rem);
 }
 
 .section-heading p {
     max-width: 650px;
+
     margin-bottom: 26px;
+
     font-size: 1.05rem;
 }
 
 .topic-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+
     gap: 14px;
 }
 
 .topic-card {
     min-width: 0;
+
     overflow: hidden;
-    background: rgba(255,255,255,.62);
+
+    background: rgba(255,255,255,.65);
+
     border: 1px solid rgba(0,0,0,.06);
     border-radius: 5px;
 }
 
 .topic-photo {
     height: 140px;
+
     background-position: center;
     background-size: cover;
 }
 
 .roof-cost {
-    background: linear-gradient(135deg, #213746, #9ca9a4);
+    background:
+        linear-gradient(135deg, #213746, #9ca9a4);
 }
 
 .standing-seam {
-    background: linear-gradient(135deg, #102c3c, #4f7388);
+    background:
+        linear-gradient(135deg, #102c3c, #4f7388);
 }
 
 .metal-shingle {
-    background: linear-gradient(135deg, #6a7277, #b5ada0);
+    background:
+        linear-gradient(135deg, #6a7277, #b5ada0);
 }
 
 .coastal {
-    background: linear-gradient(135deg, #4d8295, #e8d9b4);
+    background:
+        linear-gradient(135deg, #4d8295, #e8d9b4);
 }
 
 .replacement {
-    background: linear-gradient(135deg, #2d4d5b, #93856c);
+    background:
+        linear-gradient(135deg, #2d4d5b, #93856c);
 }
 
 .topic-card h3,
@@ -498,24 +564,28 @@ p {
 .topic-card h3 {
     margin-top: 18px;
     margin-bottom: 10px;
+
     font-size: 1.23rem;
 }
 
 .topic-card p {
     min-height: 92px;
+
     font-size: .88rem;
 }
 
 .topic-card a {
     display: block;
+
     margin-bottom: 18px;
+
     font-size: .83rem;
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Resources
---------------------------------------- */
+------------------------------------------------- */
 
 .resource-section {
     background: white;
@@ -524,17 +594,21 @@ p {
 .resource-layout {
     display: grid;
     grid-template-columns: .85fr 1.15fr;
+
     gap: 80px;
+
     align-items: center;
 }
 
 .resource-intro p {
     max-width: 520px;
+
     margin-bottom: 24px;
 }
 
 .resource-list {
     display: grid;
+
     gap: 8px;
 }
 
@@ -542,10 +616,12 @@ p {
     padding: 20px;
 
     display: flex;
-    gap: 17px;
     align-items: flex-start;
 
+    gap: 17px;
+
     background: #faf8f4;
+
     border: 1px solid #eeeae3;
     border-radius: 5px;
 }
@@ -560,8 +636,10 @@ p {
     place-items: center;
 
     color: var(--navy);
+
     border: 2px solid var(--navy);
     border-radius: 50%;
+
     font-weight: 900;
 }
 
@@ -576,29 +654,35 @@ p {
 
 .resource-item span {
     margin-top: 5px;
+
     color: var(--gray);
+
     font-size: .89rem;
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Process
---------------------------------------- */
+------------------------------------------------- */
 
 .process-section {
     padding: 72px 0;
+
     background: var(--cream);
 }
 
 .process-grid {
+    margin-top: 38px;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 40px;
-    margin-top: 38px;
 }
 
 .process-step {
     display: flex;
+
     gap: 18px;
 }
 
@@ -613,6 +697,7 @@ p {
 
     color: white;
     background: var(--navy);
+
     border-radius: 50%;
 
     font-family: var(--serif);
@@ -621,6 +706,7 @@ p {
 
 .process-step h3 {
     margin-bottom: 7px;
+
     font-family: var(--sans);
     font-size: 1rem;
     font-weight: 850;
@@ -628,13 +714,14 @@ p {
 
 .process-step p {
     margin: 0;
+
     font-size: .9rem;
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Locations
---------------------------------------- */
+------------------------------------------------- */
 
 .locations-section {
     background: white;
@@ -647,108 +734,150 @@ p {
 .location-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     gap: 16px;
 }
 
 .location-card {
     overflow: hidden;
+
     padding-bottom: 16px;
+
     background: #faf9f6;
+
     border: 1px solid #e5e2db;
     border-radius: 5px;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 22px rgba(14,40,55,.08);
 }
 
 .location-photo {
     height: 145px;
+
     margin-bottom: 14px;
+
     background-position: center;
     background-size: cover;
 }
 
 .raleigh {
-    background: linear-gradient(135deg, #31556d, #89a5b3);
+    background:
+        linear-gradient(135deg, #31556d, #89a5b3);
 }
 
 .wilmington {
-    background: linear-gradient(135deg, #567f8c, #cbc49f);
+    background:
+        linear-gradient(135deg, #567f8c, #cbc49f);
 }
 
 .coast {
-    background: linear-gradient(135deg, #4090a7, #e5d6af);
+    background:
+        linear-gradient(135deg, #4090a7, #e5d6af);
 }
 
 .eastern {
-    background: linear-gradient(135deg, #4f766e, #d8b879);
+    background:
+        linear-gradient(135deg, #4f766e, #d8b879);
 }
 
 .location-card strong,
 .location-card span {
     display: block;
+
     margin-inline: 15px;
 }
 
 .location-card strong {
     color: var(--navy);
+
     font-family: var(--serif);
     font-size: 1.08rem;
 }
 
 .location-card span {
     margin-top: 5px;
+
     color: var(--gold);
+
     font-size: .78rem;
     font-weight: 800;
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Final CTA
---------------------------------------- */
+------------------------------------------------- */
 
 .final-cta {
-    padding: 58px 0;
+    padding: 60px 0;
+
     color: white;
+
     text-align: center;
+
     background:
-        linear-gradient(rgba(5,42,65,.94), rgba(5,42,65,.94)),
+        linear-gradient(
+            rgba(5,42,65,.95),
+            rgba(5,42,65,.95)
+        ),
         linear-gradient(135deg, #0a3d59, #071f31);
 }
 
 .final-cta h2 {
     max-width: 850px;
+
     margin: 0 auto 25px;
+
     color: white;
+
     font-size: clamp(2rem, 4vw, 3.1rem);
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Footer
---------------------------------------- */
+------------------------------------------------- */
 
 .site-footer {
-    padding: 50px 0 88px;
+    padding: 52px 0 90px;
+
     background: #f7f4ee;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr) 1.45fr;
+    grid-template-columns: 1.55fr repeat(3, 1fr) 1.45fr;
+
     gap: 35px;
 }
 
-.footer-brand {
-    color: var(--gold);
-    font-family: var(--serif);
-    font-size: 1.7rem;
-    font-weight: 900;
+.footer-brand-column p {
+    max-width: 250px;
+
+    margin-top: 18px;
+
+    font-size: .8rem;
 }
 
-.footer-subtitle {
-    color: var(--navy);
-    font-size: .7rem;
-    font-weight: 800;
-    letter-spacing: .25em;
+.footer-logo-link {
+    display: inline-block;
+}
+
+.footer-logo {
+    display: block;
+
+    width: auto;
+    height: 82px;
+
+    object-fit: contain;
 }
 
 .footer-grid strong,
@@ -758,37 +887,41 @@ p {
 
 .footer-grid strong {
     margin-bottom: 10px;
+
     color: var(--navy);
 }
 
 .footer-grid a {
     margin: 7px 0;
-    color: #546067;
-    font-size: .83rem;
-}
 
-.footer-grid p {
-    font-size: .8rem;
+    color: #546067;
+
+    font-size: .83rem;
 }
 
 .footer-disclosure {
     padding-left: 22px;
+
     border-left: 1px solid #cac7c1;
 }
 
+.footer-disclosure p {
+    font-size: .8rem;
+}
 
-/* ---------------------------------------
+
+/* -------------------------------------------------
    Mobile Call Bar
---------------------------------------- */
+------------------------------------------------- */
 
 .mobile-call-bar {
     display: none;
 }
 
 
-/* ---------------------------------------
+/* -------------------------------------------------
    Responsive
---------------------------------------- */
+------------------------------------------------- */
 
 @media (max-width: 1050px) {
 
@@ -810,6 +943,7 @@ p {
 
     .footer-disclosure {
         padding-left: 0;
+
         border-left: 0;
     }
 }
@@ -830,19 +964,16 @@ p {
     }
 
     .nav-wrap {
-        min-height: 70px;
+        min-height: 74px;
     }
 
-    .brand-mark {
-        width: 48px;
-    }
-
-    .brand-name {
-        font-size: 1.2rem;
+    .brand-logo {
+        height: 55px;
     }
 
     .hero {
         min-height: 620px;
+
         align-items: flex-end;
 
         background:
@@ -852,11 +983,12 @@ p {
                 rgba(247,244,238,.94) 47%,
                 rgba(247,244,238,.28) 100%
             ),
-            url("/images/dom-nc.webp") 68% center / cover no-repeat;
+            url("/images/dominion-hero.jpg") 68% center / cover no-repeat;
     }
 
     .hero-copy {
         max-width: none;
+
         padding: 210px 0 50px;
     }
 
@@ -870,15 +1002,20 @@ p {
 
     .trust-strip {
         margin-top: 0;
+
         background: white;
     }
 
     .trust-grid {
         width: auto;
         max-width: none;
+
         margin: 0;
+
         grid-template-columns: 1fr;
+
         box-shadow: none;
+
         border-radius: 0;
     }
 
@@ -907,12 +1044,17 @@ p {
         gap: 30px;
     }
 
+    .footer-logo {
+        height: 72px;
+    }
+
     .site-footer {
         padding-bottom: 35px;
     }
 
     .mobile-call-bar {
         position: fixed;
+
         left: 0;
         right: 0;
         bottom: 0;
