@@ -217,7 +217,7 @@ p {
             rgba(245,240,229,.48) 58%,
             rgba(0,0,0,.04) 100%
         ),
-        url("/images/dominion-hero.jpg") center / cover no-repeat;
+        url("/images/dom-nc.webp") center / cover no-repeat;
 
     overflow: hidden;
 }
@@ -983,7 +983,7 @@ p {
                 rgba(247,244,238,.94) 47%,
                 rgba(247,244,238,.28) 100%
             ),
-            url("/images/dominion-hero.jpg") 68% center / cover no-repeat;
+            url("/images/dom-nc.webp") 68% center / cover no-repeat;
     }
 
     .hero-copy {
